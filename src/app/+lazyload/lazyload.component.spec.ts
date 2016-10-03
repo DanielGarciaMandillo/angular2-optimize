@@ -4,20 +4,20 @@ import {
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 
-import { TodolistComponent } from './todolist.component';
+import { LazyLoadComponent } from './lazyload.component';
 
 
 @Component({
     selector: 'as-test',
-    template: '<as-todolist></as-todolist>'
+    template: '<as-lazyload></as-lazyload>'
 })
 class TestComponent {
 }
 
-describe('TodolistComponent', () => {
+describe('LazyLoadComponent', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [ TodolistComponent ]
+            declarations: [ LazyLoadComponent ]
         });
     });
 

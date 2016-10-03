@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 
 
 @Component({
-    selector: 'as-todolist',
-    templateUrl: 'todolist.component.html',
+    selector: 'as-lazyload',
+    templateUrl: 'lazyload.component.html',
     styleUrls: [
-        'todolist.component.css'
+        'lazyload.component.css'
     ]
 })
-export class TodolistComponent {
+export class LazyLoadComponent {
     private hello: string;
 
     constructor() {

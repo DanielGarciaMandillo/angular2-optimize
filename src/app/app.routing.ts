@@ -5,8 +5,8 @@ import { HomeRoutes } from './home/index';
 export const appRoutes: Routes = [
     ...HomeRoutes,
     {
-        path: 'todolist',
-        loadChildren: './todolist/todolist.module#TodolistModule'
+        path: 'lazyload',
+        loadChildren: './+lazyload/lazyload.module#LazyLoadModule'
     }
 ];
 

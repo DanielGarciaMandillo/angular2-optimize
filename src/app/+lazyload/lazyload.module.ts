@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TodolistComponent, TodolistRoutes } from './index';
+import { LazyLoadComponent, LazyLoadRoutes } from './index';
 
 @NgModule({
     declarations: [
-        TodolistComponent
+        LazyLoadComponent
     ],
     imports: [
         FormsModule,
         CommonModule,
-        RouterModule.forChild(TodolistRoutes)
+        RouterModule.forChild(LazyLoadRoutes)
     ],
     exports: [
-        TodolistComponent
+        LazyLoadComponent
     ]
 })
-export class TodolistModule {
+export class LazyLoadModule {
 }
