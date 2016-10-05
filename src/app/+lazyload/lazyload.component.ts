@@ -9,9 +9,8 @@ import { Component } from '@angular/core';
     ]
 })
 export class LazyLoadComponent {
-    private hello: string;
-
-    constructor() {
-        this.hello = 'Hello';
-    }
+  mode: string;
+  constructor() {
+    this.mode = 'danger';
+  }
 }

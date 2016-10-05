@@ -1,0 +1,20 @@
+{
+  "name": "angular-webpack-fon",
+  "description": "",
+  "main": "src/app/main.ts",
+  "authors": [
+    "Daniel Garcia Mandillo <daniel.garciamandillo@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/DanielGarciaMandillo/angular2-optimize",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/Polymer#^1.7.0"
+  }
+}

@@ -8,9 +8,5 @@ import { Component } from '@angular/core';
     ]
 })
 export class HomeComponent {
-    welcome: string;
-
-    constructor() {
-        this.welcome = 'This is the HomeComponent';
-    }
+  mode: string = 'success';
 }

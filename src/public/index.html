@@ -1,16 +1,21 @@
 <html>
 
 <head>
-    <title>Angular Webpack</title>
-    <base href="/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Angular Webpack</title>
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <script>
+    window.Polymer = window.Polymer || {};
+    window.Polymer.dom = 'shadow';
+  </script>
+  <link rel="import" href="/elements.build.html">
 </head>
 
 <body>
-    <main-app>
-        <i class="center-fix main-spinner fa fa-spin fa-spinner"></i>
-    </main-app>
+  <main-app>
+    <i class="center-fix main-spinner fa fa-spin fa-spinner"></i>
+  </main-app>
 </body>
 
 </html>
