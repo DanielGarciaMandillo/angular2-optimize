@@ -2,7 +2,7 @@
 <img src="../../favicon.ico" alt="">
 <pl-button mode="{{ mode }}">Button from home component</pl-button>
 
-
+{{ mode }}
 <div class="">
   <div class="">
     <div class="">
@@ -14,7 +14,7 @@
                 <pl-content>
                   <pl-content>
                     <pl-panel>
-                      <pl-input value="input value"></pl-input>
+                      <pl-input [(value)]="mode"></pl-input>
                     </pl-panel>
                   </pl-content>
                 </pl-content>

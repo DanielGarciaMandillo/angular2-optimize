@@ -6,7 +6,6 @@ let path = require('path');
 let _ = require('lodash');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let CopyWebpackPlugin = require('copy-webpack-plugin');
 let helpers = require('./helpers');
 let letants = require('./constants');
 

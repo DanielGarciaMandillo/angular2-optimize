@@ -1,29 +1,28 @@
 <div class="">
-  <pl-panel>
-
+  <pl-panel panel-title="This is the lazy-load component">
+    <h2>Mode is {{ mode }}</h2>
+    <pl-input [(value)]="mode"></pl-input>
     <pl-button mode="{{ mode }}">Button from lazyload component</pl-button>
-    <pl-checkbox></pl-checkbox>
-    <h4>This is the lazy-load component</h4>
-    <pl-button mode="{{ mode }}">Button from lazyload component</pl-button>
-    <pl-circle mode="active"></pl-circle>
-    <pl-circle mode="suspended"></pl-circle>
-    <pl-circle mode="system"></pl-circle>
-    <pl-input value="Pepepeeeeeeeeeeeeeee"></pl-input>
-    <pl-input value="Pepepeeeeeeeeeeeeeee"></pl-input>
-    <div class="">
-      Pepe
-    </div>
 
+    <br>
+
+    <h2>Mode is {{ mode1 }}</h2>
+    <pl-input [(value)]="mode1"></pl-input>
+    <pl-button mode="{{ mode1 }}">Button from lazyload component</pl-button>
+
+    <br>
+
+    <h2>plSelect is {{ plSelect }}</h2>
+    <pl-select [(value)]="plSelect">
+      <option value="pepe">Pepe</option>
+      <option value="pepa" selected>Pepa</option>
+    </pl-select>
+
+    <h2>plTextarea is {{ plTextarea }}</h2>
+    <pl-textarea [(value)]="plTextarea"></pl-textarea>
+
+    <pl-button mode="{{ myTextarea }}">Button from lazyload component</pl-button>
+
+    <br>
   </pl-panel>
-
-  <pl-button mode="{{ mode }}">Button from lazyload component</pl-button>
-  <pl-checkbox></pl-checkbox>
-  <h4>This is the lazy-load component</h4>
-  <pl-button mode="{{ mode }}">Button from lazyload component</pl-button>
-  <pl-circle mode="active"></pl-circle>
-  <pl-circle mode="suspended"></pl-circle>
-  <pl-circle mode="system"></pl-circle>
-  <pl-input value="Pepepeeeeeeeeeeeeeee"></pl-input>
-  <pl-input value="Pepepeeeeeeeeeeeeeee"></pl-input>
-
 </div>

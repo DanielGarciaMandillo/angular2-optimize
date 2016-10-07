@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LazyLoadComponent, LazyLoadRoutes } from './index';
+import { PolymerModule } from '../../polymer/polymer.module';
 
 @NgModule({
     declarations: [
@@ -11,6 +12,7 @@ import { LazyLoadComponent, LazyLoadRoutes } from './index';
     imports: [
         FormsModule,
         CommonModule,
+        PolymerModule,
         RouterModule.forChild(LazyLoadRoutes)
     ],
     exports: [

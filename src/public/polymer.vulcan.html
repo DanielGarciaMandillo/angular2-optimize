@@ -13007,8 +13007,10 @@ this.currentTarget=a,this.defaultPrevented=!1,this.eventPhase=Event.AT_TARGET,th
             _trans: {
                 type: Function,
                 computed: '_computeTrans(_language, _resources)',
-                value: function (label) {
-                    return label;
+                value: function () {
+                    return function (label) {
+                      return label;
+                    };
                 }
             },
 
@@ -13037,7 +13039,7 @@ this.currentTarget=a,this.defaultPrevented=!1,this.eventPhase=Event.AT_TARGET,th
                 if (!label) {
                     return '';
                 }
-                
+
                 translation = this._extractTranslation(resources, language, label);
                 if (!translation) {
                     return label;
@@ -15683,149 +15685,149 @@ this.currentTarget=a,this.defaultPrevented=!1,this.eventPhase=Event.AT_TARGET,th
 
 
 <dom-module id="pl-button" assetpath="../pl-button/">
-  <style>
-    :host {
-      -moz-user-select: none;
-      -ms-user-select: none;
-      -webkit-user-select: none;
-      background-color: var(--mode-color);
-      border: none;
-      border-radius: 2px;
-      box-shadow: 0 1px 4px 0 var(--mode-color);
-      color: #fff;
-      cursor: pointer;
-      display: inline-block;
-      font-size: 14px;
-      font-weight: normal;
-      letter-spacing: 0.05em;
-      line-height: 1.57142857;
-      margin: 8px;
-      padding: 10px 27px;
-      text-align: center;
-      /*transition: 0.25s ease-in;*/
-      user-select: none;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
+    <style>
+         :host {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            background-color: var(--mode-color);
+            border: none;
+            border-radius: 2px;
+            box-shadow: 0 1px 4px 0 var(--mode-color);
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            letter-spacing: 0.05em;
+            line-height: 1.57142857;
+            margin: 8px;
+            padding: 10px 27px;
+            text-align: center;
+            transition: 0.25s ease-in;
+            user-select: none;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
 
-    :host(:focus) {
-      outline-offset: -2px;
-      outline: 0;
-      box-shadow: none;
-      text-decoration: none;
-    }
+         :host(:focus) {
+            outline-offset: -2px;
+            outline: 0;
+            box-shadow: none;
+            text-decoration: none;
+        }
 
-    :host(:hover) {
-      box-shadow: none;
-      text-decoration: none;
-    }
+         :host(:hover) {
+            box-shadow: none;
+            text-decoration: none;
+        }
 
-    :host([disabled]) {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      cursor: not-allowed;
-      filter: alpha(opacity=65);
-      opacity: 0.65;
-      pointer-events: none;
-    }
+         :host([disabled]) {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            cursor: not-allowed;
+            filter: alpha(opacity=65);
+            opacity: 0.65;
+            pointer-events: none;
+        }
 
-    :host([full]) {
-      display: block;
-      padding-left: 0;
-      padding-right: 0;
-      width: 100%;
-    }
+         :host([full]) {
+            display: block;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
 
-    :host([small]) {
-      padding: 6px 18px;
-      text-transform: uppercase;
-    }
+         :host([small]) {
+            padding: 6px 18px;
+            text-transform: uppercase;
+        }
 
-    :host([medium]) {
-      padding: 8px 25px;
-    }
+         :host([medium]) {
+            padding: 8px 25px;
+        }
 
-    :host([rounded]) {
-      border-radius: 20px;
-    }
+         :host([rounded]) {
+            border-radius: 20px;
+        }
 
-    :host([mode="link"]) {
-      background-color: var(--pl-button-link-background-color, transparent);
-      box-shadow: none;
-      color: var(--pl-button-link-color1, transparent);
-    }
+         :host([mode="link"]) {
+            background-color: var(--pl-button-link-background-color, transparent);
+            box-shadow: none;
+            color: var(--pl-button-link-color1, #f39500);
+        }
 
-    :host([mode="link"]:hover),
-    :host([mode="link"]:focus),
-    :host([mode="link"]:active),
-    :host([mode="link"][active]) {
-      text-decoration: underline;
-    }
+         :host([mode="link"]:hover),
+         :host([mode="link"]:focus),
+         :host([mode="link"]:active),
+         :host([mode="link"][active]) {
+            text-decoration: underline;
+        }
 
-    :host([gradient]) {
-      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
-      border-color: rgba(0, 0, 0, 0.07) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.18);
-      -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      background-repeat: repeat-x;
-      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
-    }
+         :host([gradient]) {
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 0, 0, 0.07) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.18);
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            background-repeat: repeat-x;
+            background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
+        }
 
-    :host([mode="light"][gradient]) {
-      text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
-      background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
-      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
-      filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=0);
-    }
-  </style>
-  <template strip-whitespace="">
+         :host([mode="light"][gradient]) {
+            text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
+            background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
+            filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=0);
+        }
+    </style>
+    <template strip-whitespace="">
         <content></content>
     </template>
-  <script>
-    Polymer({
-      is: 'pl-button',
-      properties: {
-        /**
-         * If submit is set like attribute, the component fires an event named pl-button-submit
-         */
-        submit: {
-          type: Boolean,
-          value: false,
-          reflecToAttribute: true
-        }
-      },
-      listeners: {
-        'click': '_handleClick',
-      },
-      behaviors: [
-        PlatformConsole.StyleModeBehavior,
-        PlatformConsole.TransBehavior
-      ],
-      /**
-       * Method executed when clicking on the button
-       */
-      _handleClick: function() {
-        if (this.submit) {
-          this.fire("pl-button-submit");
-        } else {
-          this.fire("pl-button-pressed");
-        }
-      }
+    <script>
+        Polymer({
+            is: 'pl-button',
+            properties: {
+                /**
+                 * If submit is set like attribute, the component fires an event named pl-button-submit
+                 */
+                submit: {
+                    type: Boolean,
+                    value: false,
+                    reflecToAttribute: true
+                }
+            },
+            listeners: {
+                'click': '_handleClick',
+            },
+            behaviors: [
+                PlatformConsole.StyleModeBehavior,
+                PlatformConsole.TransBehavior
+            ],
+            /**
+             * Method executed when clicking on the button
+             */
+            _handleClick: function() {
+                if (this.submit) {
+                    this.fire("pl-button-submit");
+                } else {
+                    this.fire("pl-button-pressed");
+                }
+            }
 
-      /**
-       * Fired when button is taped.
-       * @event pl-button-pressed
-       * @param {Event} event Custom event fired
-       */
+            /**
+             * Fired when button is taped.
+             * @event pl-button-pressed
+             * @param {Event} event Custom event fired
+             */
 
-      /**
-       * Fired when button is taped.
-       * @event pl-button-submit
-       * @param {Event} event This events got fired when the property submit of the element is setted to true (is on the element tag):
-       */
-    })
-  </script>
+            /**
+             * Fired when button is taped.
+             * @event pl-button-submit
+             * @param {Event} event This events got fired when the property submit of the element is setted to true (is on the element tag):
+             */
+        })
+    </script>
 </dom-module>
 <script>
   /**
@@ -18812,42 +18814,42 @@ is separate from validation, and `allowed-pattern` does not affect how the input
 
 
 <dom-module id="pl-input" assetpath="../pl-input/">
-  <style>
-    :host {
-      @apply(--layout);
-      @apply(--layout-flex);
-    }
+    <style>
+         :host {
+            @apply(--layout);
+            @apply(--layout-flex);
+        }
 
-    :host(:focus) {
-      outline: none;
-    }
+         :host(:focus) {
+            outline: none;
+        }
 
-    :host([pl-read-only="true"][disabled]) {
-      outline: none;
-      pointer-events: none;
-    }
+         :host([pl-read-only="true"][disabled]) {
+            outline: none;
+            pointer-events: none;
+        }
 
-    :host([hidden]) {
-      display: none !important;
-    }
+         :host([hidden]) {
+            display: none !important;
+        }
 
-    :host([prefix="true"]) #content>::content>input {
-      padding-left: 30px;
-    }
+         :host([prefix="true"]) #content> ::content>input {
+            padding-left: 30px;
+        }
 
-    :host([suffix="true"]) #content>::content>input {
-      padding-right: 30px;
-    }
+         :host([suffix="true"]) #content> ::content>input {
+            padding-right: 30px;
+        }
 
-    :host([prefix="true"])>pl-form-control {
-      padding-left: 30px;
-    }
+         :host([prefix="true"])>pl-form-control {
+            padding-left: 30px;
+        }
 
-    :host([prefix="true"])>::content>input {
-      padding-left: 30px;
-    }
-  </style>
-  <template>
+         :host([prefix="true"])> ::content>input {
+            padding-left: 30px;
+        }
+    </style>
+    <template>
         <pl-form-control id="form-control" pl-read-only$="[[plReadOnly]]" error="[[error]]" disabled$="[[disabled]]" label="[[label]]" value="[[value]]" prefix="[[prefix]]" suffix="[[suffix]]">
             <content id="prefix" select="[prefix]"></content>
             <input is="iron-input" id="input" class="pl-form-control-input" disabled$="[[disabled]]" title$="[[title]]" value$="[[value]]" bind-value="[[value]]" mask="{{mask}}" invalid="{{invalid}}" prevent-invalid-input="[[preventInvalidInput]]" allowed-pattern="[[allowedPattern]]" validator="[[validator]]" type$="[[type]]" pattern$="[[pattern]]" required$="[[required]]" autocomplete$="[[autocomplete]]" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" minlength$="[[minlength]]" maxlength$="[[maxlength]]" min$="[[min]]" max$="[[max]]" step$="[[step]]" name$="[[name]]" placeholder$="[[_trans(placeholder)]]" list$="[[list]]" size$="[[size]]" autocapitalize$="[[autocapitalize]]" autocorrect$="[[autocorrect]]" tabindex$="[[tabindex]]" autosave$="[[autosave]]" results$="[[results]]" accept$="[[accept]]" multiplse$="[[multiple]]">
@@ -18855,44 +18857,44 @@ is separate from validation, and `allowed-pattern` does not affect how the input
             <content id="tooltipContainer"></content>
         </pl-form-control>
     </template>
-  <script>
-    Polymer({
-      is: 'pl-input',
-      properties: {
-        mask: {
-          type: String
-        }
-      },
-      behaviors: [
-        PlatformConsole.FormControlBehavior,
-        PlatformConsole.TransBehavior
-      ],
-      observers: [
-        '_processMaskValue(value,mask)'
-      ],
-      ready: function() {
-        if (this.mask != undefined && this.mask != "") {
-          this.$.input.placeholder = this.mask;
-        }
-      },
-      attached: function() {
-        this.listen(this.$.input, 'input', '_onInput')
-      },
-      _processMaskValue: function(value, mask) {
-        this.$.input.value = VMasker.toPattern(value, mask);
-      },
-      _onInput: function() {
-        this.value = this.$.input.value;
-        this.fire('pl-input-change', this.value);
-      }
+    <script>
+        Polymer({
+            is: 'pl-input',
+            properties: {
+                mask: {
+                    type: String
+                }
+            },
+            behaviors: [
+                PlatformConsole.FormControlBehavior,
+                PlatformConsole.TransBehavior
+            ],
+            observers: [
+                '_processMaskValue(value,mask)'
+            ],
+            ready: function() {
+                if (this.mask != undefined && this.mask != "") {
+                    this.$.input.placeholder = this.mask;
+                }
+            },
+            attached: function() {
+                this.listen(this.$.input, 'input', '_onInput')
+            },
+            _processMaskValue: function(value, mask) {
+                this.$.input.value = VMasker.toPattern(value, mask);
+            },
+            _onInput: function() {
+                this.value = this.$.input.value;
+                this.fire('pl-input-change', this.value);
+            }
 
-      /**
-       * Fired when input detects a change .
-       * @event pl-input-change
-       * @param {Event} event The `event.detail` contains the current value of the input
-       */
-    })
-  </script>
+            /**
+             * Fired when input detects a change .
+             * @event pl-input-change
+             * @param {Event} event The `event.detail` contains the current value of the input
+             */
+        })
+    </script>
 </dom-module>
 
 
@@ -22054,7 +22056,7 @@ is separate from validation, and `allowed-pattern` does not affect how the input
     <style>
          :host {
             background-color: white;
-            padding: 10px 0;
+            padding: 10px;
             list-style: none;
             text-align: left;
             display: block;
@@ -22064,6 +22066,7 @@ is separate from validation, and `allowed-pattern` does not affect how the input
             cursor: pointer;
             width: 100%;
             font-size: 14px;
+            box-sizing: border-box;
         }
 
          :host(:hover),
@@ -22078,6 +22081,11 @@ is separate from validation, and `allowed-pattern` does not affect how the input
          :host div {
             display: inline-block;
             white-space: initial;
+        }
+
+         :host(.pl-dropdown-option__separator) {
+            border-top: 1px solid;
+            border-color: var(--pl-dropdown-option__separator-color, #dddddd);
         }
     </style>
 
@@ -22144,7 +22152,7 @@ is separate from validation, and `allowed-pattern` does not affect how the input
             border-radius: 4px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
             min-width: 165px;
-            padding: 10px;
+            padding: 10px 0;
             position: absolute !important;
             top: 55px !important;
             width: auto;
@@ -22923,7 +22931,7 @@ odule&gt;
 
 
 <dom-module id="pl-panel" assetpath="../pl-panel/">
-  <template>
+    <template>
         <style is="custom-style">
              :host {
                 display: block;
@@ -22986,23 +22994,36 @@ odule&gt;
             }
         </style>
         <article class="pl-panel">
-          <content select=""></content>
-        </article>
-  </template>
+            <div class="pl-panel__header">
+                <template is="dom-if" if="{{panelTitle}}">
+                    <span class="pl-panel__header__title"><pl-trans label="{{panelTitle}}"></pl-trans></span>
+                </template>
+                <content select="#pl-panel-header-buttons"></content>
+            </div>
 
-  <script>
-    Polymer({
-      is: 'pl-panel',
-      properties: {
-        /**
-         * The title of the panel.
-         */
-        panelTitle: {
-          type: String
-        }
-      }
-    });
-  </script>
+            <div class="pl-panel__body">
+                <content select=":not([pl-panel-footer]):not(#pl-panel-header-buttons)"></content>
+            </div>
+
+            <div class="pl-panel__footer">
+                <content select="[pl-panel-footer]"></content>
+            </div>
+        </article>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'pl-panel',
+            properties: {
+                /**
+                 * The title of the panel.
+                 */
+                panelTitle: {
+                    type: String
+                }
+            }
+        });
+    </script>
 </dom-module>
 
 
@@ -29350,7 +29371,7 @@ Fired whenever the directions service returns a result.
 
 
 <dom-module id="pl-textarea" assetpath="../pl-textarea/">
-    <template>
+  <template>
         <style id="custom-style">
              :host {
                 @apply(--layout);
@@ -29383,52 +29404,52 @@ Fired whenever the directions service returns a result.
             }
         </style>
         <pl-form-control error="[[error]]" pl-read-only$="[[plReadOnly]]" disabled$="[[disabled]]" label="[[label]]">
-            <textarea id="textarea" value="{{value}}" disabled$="[[disabled]]" autocomplete$="[[autocomplete]]" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" name$="[[name]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" required$="[[required]]" rows$="[[rows]]" max-rows$="[[maxRows]]" expandible$="[[expandible]]" on-input="_onInput"></textarea>
+            <textarea is="iron-input" id="textarea" bind-value="{{value}}" disabled$="[[disabled]]" autocomplete$="[[autocomplete]]" autofocus$="[[autofocus]]" inputmode$="[[inputmode]]" name$="[[name]]" placeholder$="[[placeholder]]" readonly$="[[readonly]]" required$="[[required]]" rows$="[[rows]]" max-rows$="[[maxRows]]" expandible$="[[expandible]]" on-input="_onInput"></textarea>
             <content id="tooltipContainer"></content>
         </pl-form-control>
     </template>
-    <script>
-        Polymer({
-            is: 'pl-textarea',
+  <script>
+    Polymer({
+      is: 'pl-textarea',
 
-            behaviors: [
-                PlatformConsole.FormControlBehavior
-            ],
+      behaviors: [
+        PlatformConsole.FormControlBehavior
+      ],
 
-            properties: {
-                /**
-                 * The initial number of rows.
-                 *
-                 * @attribute rows
-                 * @type number
-                 * @default 1
-                 */
-                rows: {
-                    type: Number,
-                    value: 1
-                },
-                /**
-                 * The maximum number of rows this element can grow to until it
-                 * scrolls. 0 means no maximum.
-                 *
-                 * @attribute maxRows
-                 * @type number
-                 * @default 0
-                 */
-                maxRows: {
-                    type: Number,
-                    value: 0
-                },
-                expandible: {
-                    type: Boolean,
-                    value: false
-                }
-            },
-            _onInput: function() {
-                this.fire('pl-textarea-change', this.$.textarea.value)
-            }
-        });
-    </script>
+      properties: {
+        /**
+         * The initial number of rows.
+         *
+         * @attribute rows
+         * @type number
+         * @default 1
+         */
+        rows: {
+          type: Number,
+          value: 1
+        },
+        /**
+         * The maximum number of rows this element can grow to until it
+         * scrolls. 0 means no maximum.
+         *
+         * @attribute maxRows
+         * @type number
+         * @default 0
+         */
+        maxRows: {
+          type: Number,
+          value: 0
+        },
+        expandible: {
+          type: Boolean,
+          value: false
+        }
+      },
+      _onInput: function() {
+        this.fire('pl-textarea-change', this.$.textarea.value)
+      }
+    });
+  </script>
 </dom-module>
 <style media="screen" is="custom-style" id="application-styles">
   :root {
