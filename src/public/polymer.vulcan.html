@@ -22923,7 +22923,7 @@ odule&gt;
 
 
 <dom-module id="pl-panel" assetpath="../pl-panel/">
-    <template>
+  <template>
         <style is="custom-style">
              :host {
                 display: block;
@@ -22986,36 +22986,23 @@ odule&gt;
             }
         </style>
         <article class="pl-panel">
-            <div class="pl-panel__header">
-                <template is="dom-if" if="{{panelTitle}}">
-                    <span class="pl-panel__header__title"><pl-trans label="{{panelTitle}}"></pl-trans></span>
-                </template>
-                <content select="#pl-panel-header-buttons"></content>
-            </div>
-
-            <div class="pl-panel__body">
-                <content select=":not([pl-panel-footer]):not(#pl-panel-header-buttons)"></content>
-            </div>
-
-            <div class="pl-panel__footer">
-                <content select="[pl-panel-footer]"></content>
-            </div>
+          <content select=""></content>
         </article>
-    </template>
+  </template>
 
-    <script>
-        Polymer({
-            is: 'pl-panel',
-            properties: {
-                /**
-                 * The title of the panel.
-                 */
-                panelTitle: {
-                    type: String
-                }
-            }
-        });
-    </script>
+  <script>
+    Polymer({
+      is: 'pl-panel',
+      properties: {
+        /**
+         * The title of the panel.
+         */
+        panelTitle: {
+          type: String
+        }
+      }
+    });
+  </script>
 </dom-module>
 
 

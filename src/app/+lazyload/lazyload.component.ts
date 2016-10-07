@@ -13,4 +13,8 @@ export class LazyLoadComponent {
   constructor() {
     this.mode = 'danger';
   }
+
+  showEvent(detail: any) {
+    console.log(detail);
+  }
 }

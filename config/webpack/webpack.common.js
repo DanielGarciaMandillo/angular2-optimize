@@ -18,7 +18,7 @@ module.exports = {
         'polyfills': './src/app/polyfills.ts',
         'vendor': './src/app/vendor.ts',
         'app': './src/app/main.ts',
-        'webcomponents': './bower_components/webcomponentsjs/webcomponents-lite.js'
+        'webcomponents': './bower_components/webcomponentsjs/webcomponents.js'
     },
 
     resolve: {
