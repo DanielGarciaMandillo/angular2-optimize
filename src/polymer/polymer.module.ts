@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { PolymerBinding } from './polymer-binding';
+import { PolymerBinding } from './polymer.binding';
 import { HomeModule } from '../app/home/home.module';
 
 @NgModule({
