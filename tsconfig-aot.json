@@ -17,8 +17,6 @@
   },
   "exclude": [
     "node_modules",
-    "bower_components",
-    "src/**/elements.build.html",
     "config",
     "e2e",
     "src/**/*.spec.ts",

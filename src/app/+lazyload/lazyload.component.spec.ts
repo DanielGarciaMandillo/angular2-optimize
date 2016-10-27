@@ -1,10 +1,6 @@
-import {
-    async,
-    TestBed
-} from '@angular/core/testing';
-import { Component } from '@angular/core';
-
-import { LazyLoadComponent } from './lazyload.component';
+import {async, TestBed} from "@angular/core/testing";
+import {Component} from "@angular/core";
+import {LazyLoadComponent} from "./lazyload.component";
 
 
 @Component({

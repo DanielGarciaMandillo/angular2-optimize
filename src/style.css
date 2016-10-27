@@ -2,10 +2,6 @@ body {
     background-color: #ebebeb;
 }
 
-main-app {
-  visibility: hidden;
-}
-
 .loader {
   margin: 60px auto;
   font-size: 10px;

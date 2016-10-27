@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "main": "src/app/main.ts",
     "scripts": {
-        "start": "npm run polymer && webpack-dashboard -- webpack-dev-server --inline --port 8080",
+        "start": "webpack-dashboard -- webpack-dev-server --inline --port 8080",
         "pretest": "gulp clean-coverage",
         "test": "karma start",
         "posttest": "npm run coverage",
@@ -15,18 +15,16 @@
         "ngc": "ngc -p tsconfig-aot.json",
         "serve": "lite-server -c config/browser-sync/bs-config.js",
         "prebuild": "gulp clean-build",
-        "build": "npm run polymer && npm run ngc && webpack --config config/webpack/webpack.prod.js --progress --profile --bail",
+        "build": "npm run ngc && webpack --config config/webpack/webpack.prod.js --progress --profile --bail",
         "postbuild": "gulp clean-ngc",
-        "serve-build": "npm run polymer && npm run build && npm run serve",
+        "serve-build": "npm run build && npm run serve",
         "clean": "gulp clean",
         "pree2e": "npm run webdriver:update -- --standalone",
         "e2e": "protractor",
         "webdriver-manager": "webdriver-manager",
         "webdriver:start": "npm run webdriver-manager start",
         "webdriver:update": "npm run webdriver-manager update",
-        "coveralls": "coveralls < ./coverage/lcov.info",
-        "polymer": "npm run vulcan",
-        "vulcan": "./node_modules/vulcanize/bin/vulcanize ./bower_components/pl-framework/pl-framework.html > ./src/public/polymer.vulcan.html --inline-script --inline-css --strip-comments"
+        "coveralls": "coveralls < ./coverage/lcov.info"
     },
     "dependencies": {
         "@angular/common": "~2.0.1",
@@ -49,7 +47,6 @@
         "codelyzer": "1.0.0-beta.0",
         "compression-webpack-plugin": "0.3.1",
         "core-js": "^2.4.1",
-        "crisper": "^2.0.2",
         "css-loader": "^0.25.0",
         "del": "~2.2.2",
         "dotenv": "^2.0.0",
@@ -79,7 +76,6 @@
         "tslint-loader": "^2.1.5",
         "tslint": "^3.15.1",
         "typescript": "^2.0.3",
-        "vulcanize": "^1.14.8",
         "webpack-merge": "^0.14.1",
         "webpack": "2.1.0-beta.25",
         "zone.js": "^0.6.25"

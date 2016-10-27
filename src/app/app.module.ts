@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { appRoutingProviders, routing } from './app.routing';
-import { HomeModule } from './home/home.module';
+import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from "@angular/core";
+import {BrowserModule} from "@angular/platform-browser";
+import {AppComponent} from "./app.component";
+import {appRoutingProviders, routing} from "./app.routing";
+import {HomeModule} from "./home/home.module";
+import {NotFound404Component} from "./notfound.component";
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        NotFound404Component
     ],
     imports: [
         BrowserModule,
@@ -14,7 +16,8 @@ import { HomeModule } from './home/home.module';
         routing
     ],
     providers: [appRoutingProviders],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {
 }

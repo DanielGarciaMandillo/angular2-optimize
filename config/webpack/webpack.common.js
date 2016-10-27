@@ -16,8 +16,7 @@ module.exports = {
     entry: {
         'polyfills': './src/app/polyfills.ts',
         'vendor': './src/app/vendor.ts',
-        'app': './src/app/main.ts',
-        'webcomponents': './bower_components/webcomponentsjs/webcomponents.js'
+        'app': './src/app/main.ts'
     },
 
     resolve: {
@@ -40,9 +39,6 @@ module.exports = {
             test: /\.html$/,
             loader: 'html',
             exclude: helpers.root('src', 'public')
-        }, {
-            test: /polymer\.vulcan\.html$/,
-            loader: 'file?name=[name]-[hash:6].[ext]'
         }, {
             test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
             loader: 'file?name=assets/[name].[hash].[ext]'
@@ -72,7 +68,7 @@ module.exports = {
         ),
 
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills', 'webcomponents']
+            name: ['app', 'vendor', 'polyfills']
         }),
 
         new HtmlWebpackPlugin({
